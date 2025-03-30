@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://yerpvr1lh0vu"]
+
+[ext_resource type="Script" uid="uid://dq5yeojukq40c" path="res://Scene/messagelabel.gd" id="1_45mst"]
+
+[node name="Label" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "asdasdasd"
+script = ExtResource("1_45mst")

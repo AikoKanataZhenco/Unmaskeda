@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bu6hsess3gvsg"
+path="res://.godot/imported/School Theme.mp3-20a5f2957c86f4ce8b6b184151b75998.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/School Theme.mp3"
+dest_files=["res://.godot/imported/School Theme.mp3-20a5f2957c86f4ce8b6b184151b75998.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

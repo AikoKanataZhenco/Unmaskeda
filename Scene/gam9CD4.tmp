@@ -1,0 +1,186 @@
+[gd_scene load_steps=12 format=3 uid="uid://jafvyygf5ep7"]
+
+[ext_resource type="PackedScene" uid="uid://bajs0k2b6myfv" path="res://Scene/player.tscn" id="1_36h6k"]
+[ext_resource type="Script" path="res://Scene/parallax_background.gd" id="2_5qx8h"]
+[ext_resource type="Texture2D" uid="uid://2xe63yadp06f" path="res://Assets/background/1.png" id="3_rhik7"]
+[ext_resource type="Script" path="res://Scene/sprite_2d.gd" id="4_206ka"]
+[ext_resource type="Texture2D" uid="uid://khp3vwcqa0ix" path="res://Assets/background/2.png" id="5_jdnk8"]
+[ext_resource type="Texture2D" uid="uid://cbm30icdmppxp" path="res://Assets/background/3.png" id="6_kbk30"]
+[ext_resource type="Texture2D" uid="uid://dipufii00kaqr" path="res://Assets/background/4.png" id="7_u8u1v"]
+[ext_resource type="Texture2D" uid="uid://3vvllvfy26i2" path="res://Assets/background/5.png" id="8_kvdgh"]
+[ext_resource type="PackedScene" uid="uid://83rcx736eyto" path="res://Scene/portel.tscn" id="10_q2bm3"]
+[ext_resource type="PackedScene" uid="uid://b1fnltbqnnbv8" path="res://Scene/Skool.tscn" id="16_13odj"]
+
+[sub_resource type="Environment" id="Environment_si424"]
+background_mode = 3
+background_energy_multiplier = 2.0
+ambient_light_color = Color(0.45768, 0.351011, 0.526756, 1)
+ambient_light_energy = 4.15
+tonemap_mode = 3
+ssao_enabled = true
+ssao_radius = 4.7
+ssao_detail = 1.0
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.32
+glow_bloom = 1.0
+glow_blend_mode = 1
+glow_hdr_threshold = 4.0
+glow_hdr_scale = 4.0
+glow_map_strength = 1.0
+fog_mode = 1
+fog_light_energy = 2.09
+fog_sun_scatter = 0.65
+fog_density = 1.0
+fog_height = 245.06
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1953
+volumetric_fog_emission_energy = 1.95
+volumetric_fog_gi_inject = 1.33
+volumetric_fog_anisotropy = 0.9
+volumetric_fog_length = 309.06
+
+[node name="Game LVL" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_36h6k")]
+z_index = 1
+y_sort_enabled = false
+position = Vector2(418, 353)
+scale = Vector2(0.8, 0.8)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
+visible = false
+scroll_base_scale = Vector2(5, 5)
+script = ExtResource("2_5qx8h")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Player/ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1050, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/ParallaxLayer"]
+scale = Vector2(3, 3)
+texture = ExtResource("3_rhik7")
+script = ExtResource("4_206ka")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Player/ParallaxBackground"]
+position = Vector2(0, -16)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1050, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/ParallaxLayer2"]
+scale = Vector2(3, 3)
+texture = ExtResource("5_jdnk8")
+script = ExtResource("4_206ka")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Player/ParallaxBackground"]
+position = Vector2(0, -16)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1050, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(3, 3)
+texture = ExtResource("6_kbk30")
+script = ExtResource("4_206ka")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Player/ParallaxBackground"]
+position = Vector2(0, -16)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1050, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/ParallaxLayer4"]
+scale = Vector2(3, 3)
+texture = ExtResource("7_u8u1v")
+script = ExtResource("4_206ka")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Player/ParallaxBackground"]
+position = Vector2(0, -16)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1050, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/ParallaxBackground/ParallaxLayer5"]
+scale = Vector2(3, 3)
+texture = ExtResource("8_kvdgh")
+script = ExtResource("4_206ka")
+
+[node name="outside of skool" parent="." instance=ExtResource("16_13odj")]
+position = Vector2(-201, -165)
+scale = Vector2(1.5, 1.5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_si424")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(-393, 249)
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(850, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(0, -697)
+scale = Vector2(1.5, 5.22)
+texture = ExtResource("3_rhik7")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(-393, 249)
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(850, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
+position = Vector2(9, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_jdnk8")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(-393, 249)
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(850, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
+position = Vector2(4, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_kbk30")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(-393, 249)
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(850, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer4"]
+position = Vector2(13, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_u8u1v")
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(-398, 254)
+motion_mirroring = Vector2(850, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer5"]
+position = Vector2(13, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_kvdgh")
+centered = false
+
+[node name="Area2D" parent="." instance=ExtResource("10_q2bm3")]
+position = Vector2(436, 309)
+
+[node name="Marker2D" parent="Area2D" index="1"]
+position = Vector2(646, -151)
+
+[node name="Area2D2" parent="." instance=ExtResource("10_q2bm3")]
+position = Vector2(-9, 193)
+
+[node name="Marker2D" parent="Area2D2" index="1"]
+position = Vector2(441, 193)
+
+[editable path="Area2D"]
+[editable path="Area2D2"]

@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1d23i55j8q2u"]
+
+[ext_resource type="Texture2D" uid="uid://blxxj5mjtrgll" path="res://Assets/Png/miku.png" id="1_varav"]
+
+[sub_resource type="GDScript" id="GDScript_jim4w"]
+script/source = "extends CharacterBody2D
+
+var speed = 100  # adjust the speed to your liking
+
+func _process(delta):
+	var velocity = Vector2.ZERO
+
+	if Input.is_action_pressed(\"ui_right\"):
+		velocity.x += 1
+	if Input.is_action_pressed(\"ui_left\"):
+		velocity.x -= 1
+	if Input.is_action_pressed(\"ui_down\"):
+		velocity.y += 1
+	if Input.is_action_pressed(\"ui_up\"):
+		velocity.y -= 1
+
+	velocity = velocity.normalized() * speed
+
+	move_and_slide(velocity)
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s82g1"]
+atlas = ExtResource("1_varav")
+region = Rect2(0, 96, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8ewx"]
+atlas = ExtResource("1_varav")
+region = Rect2(33, 96, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gixss"]
+atlas = ExtResource("1_varav")
+region = Rect2(66, 96, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3er3h"]
+atlas = ExtResource("1_varav")
+region = Rect2(99, 96, 33, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgwm1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s82g1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8ewx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gixss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3er3h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v2xi6"]
+radius = 10.0499
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(0, -23)
+script = SubResource("GDScript_jim4w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bgwm1")
+autoplay = "default"
+frame_progress = 0.0781393
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 11)
+shape = SubResource("CircleShape2D_v2xi6")

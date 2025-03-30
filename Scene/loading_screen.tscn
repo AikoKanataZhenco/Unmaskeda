@@ -1,0 +1,142 @@
+[gd_scene load_steps=12 format=3 uid="uid://ceeilbnufaxmr"]
+
+[ext_resource type="Script" uid="uid://2wx81ajfseho" path="res://Scripts/loading_screen.gd" id="1_40l4m"]
+[ext_resource type="Shader" uid="uid://101hvd2kpj20" path="res://Scripts/shader.gdshader" id="1_ewhv3"]
+[ext_resource type="Texture2D" uid="uid://dkxg7psf0t7f5" path="res://Assets/Clouds/Clouds 3/1.png" id="3_fq8xx"]
+[ext_resource type="Texture2D" uid="uid://ceqww7vr83mu2" path="res://Assets/Clouds/Clouds 3/2.png" id="4_8p3qh"]
+[ext_resource type="Texture2D" uid="uid://g7a677ijwjxu" path="res://Assets/Clouds/Clouds 3/3.png" id="5_ox0lv"]
+[ext_resource type="Texture2D" uid="uid://c3e8nt6ewq6p3" path="res://Assets/Clouds/Clouds 3/4.png" id="6_xfqtv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mewhi"]
+shader = ExtResource("1_ewhv3")
+shader_parameter/speed = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7x0k"]
+shader = ExtResource("1_ewhv3")
+shader_parameter/speed = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ldpxj"]
+shader = ExtResource("1_ewhv3")
+shader_parameter/speed = 0.015
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j01t1"]
+shader = ExtResource("1_ewhv3")
+shader_parameter/speed = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxmxc"]
+bg_color = Color(0.395777, 0.639404, 0.73751, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.855255, 0.752035, 0.946073, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 10
+
+[node name="LoadingScreen" type="Control" node_paths=PackedStringArray("loading_bar", "percentage_number")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_40l4m")
+loading_bar = NodePath("ProgressBar")
+percentage_number = NodePath("progress_number")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -4
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_mewhi")
+position = Vector2(692, 361)
+scale = Vector2(3, 3)
+texture = ExtResource("3_fq8xx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -4
+texture_repeat = 2
+material = SubResource("ShaderMaterial_y7x0k")
+position = Vector2(692, 361)
+scale = Vector2(3, 3)
+texture = ExtResource("4_8p3qh")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = -4
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ldpxj")
+position = Vector2(692, 361)
+scale = Vector2(3, 3)
+texture = ExtResource("5_ox0lv")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+z_index = -4
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_j01t1")
+position = Vector2(698, 362)
+scale = Vector2(3, 3)
+texture = ExtResource("6_xfqtv")
+
+[node name="LoadingLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -709.0
+offset_top = -416.5
+offset_right = 709.0
+offset_bottom = 416.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "Loading... Please wait"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="progress_number" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -709.0
+offset_top = -214.0
+offset_right = 709.0
+offset_bottom = 394.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -611.0
+offset_top = 119.0
+offset_right = 612.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/background = SubResource("StyleBoxFlat_bxmxc")
+max_value = 1.0
+step = 0.0

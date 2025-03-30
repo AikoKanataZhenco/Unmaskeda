@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://b0dpd71kdlp3u"]
+
+[ext_resource type="PackedScene" uid="uid://d1hyhlqmbwmmx" path="res://Scene/planetex.tscn" id="1_3d403"]
+[ext_resource type="PackedScene" uid="uid://bajs0k2b6myfv" path="res://Scene/player.tscn" id="2_5w1b3"]
+[ext_resource type="Shader" uid="uid://101hvd2kpj20" path="res://Scripts/shader.gdshader" id="3_rvoyc"]
+[ext_resource type="Texture2D" uid="uid://dml4nctffxdnt" path="res://Assets/Clouds/Clouds 4/1.png" id="4_hh08r"]
+[ext_resource type="Texture2D" uid="uid://dbmnpxngwyh8s" path="res://Assets/Clouds/Clouds 4/2.png" id="5_kby8k"]
+[ext_resource type="Texture2D" uid="uid://bs64phsf5sh6p" path="res://Assets/Clouds/Clouds 4/3.png" id="6_u6dbm"]
+[ext_resource type="Texture2D" uid="uid://cbb6xfwpf8ul6" path="res://Assets/Clouds/Clouds 4/4.png" id="7_5d7qw"]
+[ext_resource type="PackedScene" uid="uid://c1k6jnq2ofmvq" path="res://Scene/interact_area.tscn" id="8_mmr21"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v306f"]
+shader = ExtResource("3_rvoyc")
+shader_parameter/speed = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qsqi"]
+shader = ExtResource("3_rvoyc")
+shader_parameter/speed = 0.025
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kjay6"]
+shader = ExtResource("3_rvoyc")
+shader_parameter/speed = 0.015
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7fpuq"]
+shader = ExtResource("3_rvoyc")
+shader_parameter/speed = 0.01
+
+[node name="TileMapLayer" instance=ExtResource("1_3d403")]
+position = Vector2(-582, -515)
+scale = Vector2(2, 2)
+
+[node name="Player" parent="." index="0" instance=ExtResource("2_5w1b3")]
+position = Vector2(625.5, 283.5)
+move_speed = 200.0
+
+[node name="Camera2D" type="Camera2D" parent="Player" index="4"]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Node2D" type="Node2D" parent="Player/Camera2D" index="0"]
+position = Vector2(-742, -324.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Camera2D/Node2D" index="0"]
+z_index = -4
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_v306f")
+position = Vector2(747, 390)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_hh08r")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player/Camera2D/Node2D" index="1"]
+z_index = -4
+texture_repeat = 2
+material = SubResource("ShaderMaterial_5qsqi")
+position = Vector2(747, 390)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_kby8k")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Player/Camera2D/Node2D" index="2"]
+z_index = -4
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_kjay6")
+position = Vector2(747, 390)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_u6dbm")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Player/Camera2D/Node2D" index="3"]
+z_index = -4
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_7fpuq")
+position = Vector2(753, 391)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_5d7qw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+polygon = PackedVector2Array(559.5, 255.5, 559.5, 639.5, 689, 639.5, 688, 254.5, 568.5, 256.5, 561, 217, 701, 219.5, 757.5, 309.5, 759.5, 506, 726.5, 632, 706, 670, 595, 675, 505.5, 665, 448.5, 552, 481, 364.5, 510, 277.5, 540.5, 224.5, 554, 226.5, 561.5, 243.5)
+
+[node name="Area2D" parent="." index="2" instance=ExtResource("8_mmr21")]
+position = Vector2(624.5, 576)
+scale = Vector2(6.67212, -7.41057)
+collision_mask = 1

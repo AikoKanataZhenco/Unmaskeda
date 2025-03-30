@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1fnltbqnnbv8"]
+
+[ext_resource type="PackedScene" uid="uid://njx3anexpn80" path="res://Assets/Tiled/Tiled/outside of skool.tmx" id="1_l3kye"]
+
+[node name="outside of skool" instance=ExtResource("1_l3kye")]
+
+[node name="land" parent="." index="0"]
+z_index = -3
+
+[node name="background" parent="." index="1"]
+z_index = -3
+
+[node name="objects3" parent="." index="5"]
+z_index = 2
+
+[node name="Trees" parent="." index="6"]
+z_index = 1
+
+[node name="BuildingThinngs1" parent="." index="8"]
+z_index = 2

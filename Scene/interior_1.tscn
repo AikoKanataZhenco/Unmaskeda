@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca7yf6v646mha"]
+
+[ext_resource type="PackedScene" uid="uid://ci0bhuiya1q3u" path="res://Assets/Tiled/Tiled/interior1.tmx" id="1_pjf6c"]
+
+[node name="interior1" instance=ExtResource("1_pjf6c")]
+
+[node name="objectrs0_1" parent="." index="2"]
+z_index = 1
+
+[node name="objcets2" parent="." index="4"]
+z_index = 1
+y_sort_enabled = true

@@ -1,0 +1,38 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "Chr1",
+"description": "For testing",
+"display_name": "TestCharacter1",
+"mirror": false,
+"nicknames": ["Test1"],
+"offset": Vector2(0, 0),
+"portraits": {
+"Chr1": {
+"export_overrides": {
+"image": "\"res://Assets/2544061_df45b.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Chr2": {
+"export_overrides": {
+"image": "\"res://Assets/best-teto-design-images-below-are-examples-v0-r8b6ykdq7yge1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

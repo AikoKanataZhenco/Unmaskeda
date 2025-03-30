@@ -1,0 +1,107 @@
+[gd_scene load_steps=12 format=3 uid="uid://bncppr3ix6j83"]
+
+[ext_resource type="Shader" uid="uid://101hvd2kpj20" path="res://Scripts/shader.gdshader" id="1_10oe5"]
+[ext_resource type="Texture2D" uid="uid://b5t45dhywprll" path="res://Assets/Clouds/Clouds 2/1.png" id="2_1njw4"]
+[ext_resource type="Texture2D" uid="uid://dfbfbo8qcgich" path="res://Assets/Clouds/Clouds 2/3.png" id="3_sx6l3"]
+[ext_resource type="Texture2D" uid="uid://bs64phsf5sh6p" path="res://Assets/Clouds/Clouds 4/3.png" id="4_mxj3n"]
+[ext_resource type="Texture2D" uid="uid://ikhfhxeq1jhj" path="res://Assets/Clouds/Clouds 2/4.png" id="5_hlnxu"]
+[ext_resource type="Texture2D" uid="uid://8lsb7kcb4cu8" path="res://Assets/2544061_df45b.png" id="6_brwx2"]
+[ext_resource type="Texture2D" uid="uid://82mcsyjskl4a" path="res://Assets/Textbox.png" id="7_yuy2t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u2p7a"]
+shader = ExtResource("1_10oe5")
+shader_parameter/speed = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_othev"]
+shader = ExtResource("1_10oe5")
+shader_parameter/speed = 0.025
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v0rc6"]
+shader = ExtResource("1_10oe5")
+shader_parameter/speed = 0.015
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4mjj2"]
+shader = ExtResource("1_10oe5")
+shader_parameter/speed = 0.01
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-497, -242)
+scale = Vector2(1.6, 1.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+z_index = -4
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_u2p7a")
+position = Vector2(747, 390)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("2_1njw4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
+z_index = -4
+texture_repeat = 2
+material = SubResource("ShaderMaterial_othev")
+position = Vector2(747, 390)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("3_sx6l3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
+z_index = -4
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_v0rc6")
+position = Vector2(747, 390)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("4_mxj3n")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
+z_index = -4
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_4mjj2")
+position = Vector2(753, 391)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("5_hlnxu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1050, 358)
+scale = Vector2(2, 2)
+texture = ExtResource("6_brwx2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(688, 373)
+
+[node name="Textbox" type="Sprite2D" parent="."]
+position = Vector2(680, 345)
+scale = Vector2(1.06641, 1.07222)
+texture = ExtResource("7_yuy2t")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 265.0
+offset_top = 509.0
+offset_right = 362.0
+offset_bottom = 564.0
+theme_override_colors/font_color = Color(0.398986, 0, 0.0919627, 1)
+theme_override_font_sizes/font_size = 40
+text = "Teto"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 530.0
+offset_top = 1018.0
+offset_right = 627.0
+offset_bottom = 1073.0
+theme_override_colors/font_color = Color(0.733333, 0.72549, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Neru
+"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 313.0
+offset_top = 564.0
+offset_right = 1032.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Sup.... Skibidi Toilet :)"

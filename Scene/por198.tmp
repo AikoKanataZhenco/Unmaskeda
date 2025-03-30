@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg8hu24wtdmh2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e3uvy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xt7x"]
+size = Vector2(47.75, 41)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+material = SubResource("CanvasItemMaterial_e3uvy")
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_5xt7x")
+
+[node name="Marker2D" type="Marker2D" parent="."]
