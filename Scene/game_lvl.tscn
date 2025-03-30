@@ -60,7 +60,6 @@ script = ExtResource("1_dxlvg")
 z_index = 1
 position = Vector2(1080, 504)
 scale = Vector2(0.8, 0.8)
-move_speed = 125.0
 
 [node name="Camera2D" type="Camera2D" parent="PlayerInstance"]
 zoom = Vector2(2.1, 2.1)
@@ -177,38 +176,26 @@ volume_db = -15.0
 autoplay = true
 panning_strength = 0.0
 
-[node name="NPC" parent="." instance=ExtResource("11_dc0x1")]
-position = Vector2(422, 480)
-scale = Vector2(1.3, 1.3)
-
 [node name="npc2" parent="." instance=ExtResource("13_2y0bw")]
-position = Vector2(587, 508)
+position = Vector2(308, 493)
 scale = Vector2(1.3, 1.3)
 
 [node name="npc3" parent="." instance=ExtResource("13_2y0bw")]
-position = Vector2(742, 486)
+position = Vector2(170, 461)
 scale = Vector2(1.3, 1.3)
 
 [node name="npc4" parent="." instance=ExtResource("13_2y0bw")]
-position = Vector2(881, 509)
+position = Vector2(664, 497)
 scale = Vector2(1.3, 1.3)
 
 [node name="npc5" parent="." instance=ExtResource("13_2y0bw")]
 position = Vector2(962, 491)
 scale = Vector2(1.3, 1.3)
 
-[node name="NPC2" parent="." instance=ExtResource("11_dc0x1")]
-position = Vector2(90, 452)
-scale = Vector2(1.3, 1.3)
-
-[node name="NPC3" parent="." instance=ExtResource("11_dc0x1")]
-position = Vector2(-106, 456)
-scale = Vector2(1.3, 1.3)
-
 [node name="MessageLabelInstance" parent="." instance=ExtResource("14_lj4mw")]
 offset_left = 1074.0
 offset_top = 176.0
-offset_right = 1156.0
+offset_right = 1245.0
 offset_bottom = 199.0
 
 [editable path="TeleporterMaybe"]

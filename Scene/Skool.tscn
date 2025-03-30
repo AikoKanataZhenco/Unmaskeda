@@ -1,20 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1fnltbqnnbv8"]
+[gd_scene load_steps=3 format=3 uid="uid://b1fnltbqnnbv8"]
 
 [ext_resource type="PackedScene" uid="uid://njx3anexpn80" path="res://Assets/Tiled/Tiled/outside of skool.tmx" id="1_l3kye"]
+[ext_resource type="TileSet" uid="uid://blnnwfbcu8kh4" path="res://Scene/skool.tres" id="2_3y7ee"]
 
 [node name="outside of skool" instance=ExtResource("1_l3kye")]
 
 [node name="land" parent="." index="0"]
 z_index = -3
+tile_set = ExtResource("2_3y7ee")
 
 [node name="background" parent="." index="1"]
 z_index = -3
+tile_set = ExtResource("2_3y7ee")
+
+[node name="objcets" parent="." index="2"]
+tile_set = ExtResource("2_3y7ee")
+
+[node name="Objects1" parent="." index="3"]
+tile_set = ExtResource("2_3y7ee")
+
+[node name="objects2" parent="." index="4"]
+tile_set = ExtResource("2_3y7ee")
 
 [node name="objects3" parent="." index="5"]
 z_index = 2
+tile_set = ExtResource("2_3y7ee")
 
 [node name="Trees" parent="." index="6"]
 z_index = 1
+tile_set = ExtResource("2_3y7ee")
+
+[node name="Building" parent="." index="7"]
+tile_set = ExtResource("2_3y7ee")
 
 [node name="BuildingThinngs1" parent="." index="8"]
 z_index = 2
+tile_set = ExtResource("2_3y7ee")
+
+[node name="@TileMapLayer@23844" parent="." index="9"]
+tile_set = ExtResource("2_3y7ee")
+
+[node name="@TileMapLayer@23845" parent="." index="10"]
+tile_set = ExtResource("2_3y7ee")

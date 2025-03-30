@@ -68,7 +68,7 @@ func _on_timer_timeout() -> void:
 		# Display message that the player can go to the new area
 		var main_node = get_tree().root.get_node("MainNode")
 		if main_node:
-			main_node.show_message("Ts works now gng lol")
+			main_node.show_message("Go to the School")
 		else:
 			print("MainNode not found!")
 		#get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")  # Change to your desired scene

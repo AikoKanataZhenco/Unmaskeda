@@ -1,9 +1,9 @@
 extends Label
 
-@export var display_time: float = 10.0
+@export var display_time: float = 10.0  # Display time in seconds
 
 func _ready():
-	visible = false
+	visible = false  # Initially hidden
 
 func show_message(message: String):
 	text = message
