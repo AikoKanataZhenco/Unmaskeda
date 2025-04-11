@@ -1,0 +1,125 @@
+[gd_scene load_steps=16 format=3 uid="uid://q6a265i18woh"]
+
+[ext_resource type="Script" uid="uid://ctby0o3stg46h" path="res://Scripts/transfer.gd" id="1_sfshe"]
+[ext_resource type="Shader" uid="uid://101hvd2kpj20" path="res://Scripts/shader.gdshader" id="2_u8lf8"]
+[ext_resource type="Texture2D" uid="uid://dml4nctffxdnt" path="res://Assets/Clouds/Clouds 4/1.png" id="3_sxo38"]
+[ext_resource type="Texture2D" uid="uid://dbmnpxngwyh8s" path="res://Assets/Clouds/Clouds 4/2.png" id="4_m4us6"]
+[ext_resource type="Texture2D" uid="uid://bs64phsf5sh6p" path="res://Assets/Clouds/Clouds 4/3.png" id="5_llbtc"]
+[ext_resource type="Texture2D" uid="uid://cbb6xfwpf8ul6" path="res://Assets/Clouds/Clouds 4/4.png" id="6_48t3v"]
+[ext_resource type="AudioStream" uid="uid://dc3gghiiq65xe" path="res://Assets/Music/Main Theme.mp3" id="7_2gtif"]
+[ext_resource type="PackedScene" uid="uid://bvv5nm57i7msk" path="res://Scene/PlayerHouse.tscn" id="8_sxo38"]
+[ext_resource type="PackedScene" uid="uid://bajs0k2b6myfv" path="res://Scene/player.tscn" id="9_m4us6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_856iv"]
+size = Vector2(59, 29)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i72ry"]
+shader = ExtResource("2_u8lf8")
+shader_parameter/speed = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_apvjw"]
+shader = ExtResource("2_u8lf8")
+shader_parameter/speed = 0.025
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kqclu"]
+shader = ExtResource("2_u8lf8")
+shader_parameter/speed = 0.015
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sma3l"]
+shader = ExtResource("2_u8lf8")
+shader_parameter/speed = 0.01
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxo38"]
+size = Vector2(612.5, 20)
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_sfshe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(759.5, 605.5)
+shape = SubResource("RectangleShape2D_856iv")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+z_index = -4
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_i72ry")
+position = Vector2(692, 361)
+scale = Vector2(3, 3)
+texture = ExtResource("3_sxo38")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
+z_index = -4
+texture_repeat = 2
+material = SubResource("ShaderMaterial_apvjw")
+position = Vector2(692, 361)
+scale = Vector2(3, 3)
+texture = ExtResource("4_m4us6")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
+z_index = -4
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_kqclu")
+position = Vector2(692, 361)
+scale = Vector2(3, 3)
+texture = ExtResource("5_llbtc")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
+z_index = -4
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_sma3l")
+position = Vector2(698, 362)
+scale = Vector2(3, 3)
+texture = ExtResource("6_48t3v")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_2gtif")
+volume_db = -15.0
+autoplay = true
+panning_strength = 0.0
+
+[node name="Node2D2" parent="." instance=ExtResource("8_sxo38")]
+position = Vector2(336, 48)
+scale = Vector2(2.2, 2.2)
+
+[node name="Player" parent="." instance=ExtResource("9_m4us6")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(392, 160)
+move_speed = 120.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3, 3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+z_index = 5
+polygon = PackedVector2Array(336, 48, 336, 400, 440, 400, 440, 504, 584, 504, 584, 400, 936, 400, 936, 64, 336, 56, 392, 16, 944, 16, 1008, 104, 1008, 336, 992, 496, 712, 504, 528, 552, 344, 552, 272, 424, 240, 240, 264, 80, 288, -8)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+z_index = 5
+polygon = PackedVector2Array(336, 216, 560, 216, 560, 256, 512, 256, 512, 280, 440, 280, 440, 256, 384, 256, 384, 296, 424, 296, 424, 344, 424, 368, 440, 368, 440, 400, 336, 400, 336, 256)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+z_index = 5
+polygon = PackedVector2Array(600, 224, 600, 256, 688, 256, 688, 328, 840, 328, 840, 296, 792, 296, 728, 296, 728, 224, 656, 224)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+z_index = 5
+polygon = PackedVector2Array(768, 168, 768, 200, 768, 200, 792, 200, 792, 216, 792, 216, 864, 216, 864, 208, 888, 208, 888, 168, 864, 168, 864, 152, 792, 152, 792, 168, 792, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 5
+position = Vector2(629.75, 104)
+shape = SubResource("RectangleShape2D_sxo38")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
